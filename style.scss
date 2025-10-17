@@ -1,0 +1,14 @@
+/*-- scss:default --*/
+$font-family-base: 'Cenrutyo Gothic', sans-serif;
+
+/*-- scss:default --*/
+
+.myLink {
+    text-decoration: none;
+    color: 'green';
+}
+
+.myLink:hover {
+    text-decoration: underline;
+    color: 'darkgreen';
+}

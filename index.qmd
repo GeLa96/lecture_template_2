@@ -1,6 +1,6 @@
 ---
-title: "Template Quarto"
-author: "Course"
+title: "Quarto Template"
+author: "Data Science and Machine Learning Class"
 project: 
     type: website
     directory: website
@@ -15,3 +15,12 @@ format:
 ---
 
 Whatever content
+
+[Link Text](https://wifo.ac.at){target="_blank" .myLink}
+
+
+https://quarto.org/docs/reference/projects/options.html : watch-inputs: Re-render input files when they change (defaults to true)
+
+Intentation is important
+
+Syntex Quarto : https://quarto.org/docs/reference/formats/html.html
