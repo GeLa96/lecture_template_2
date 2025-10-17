@@ -1,9 +1,9 @@
----
+
 title: "Template Quarto"
 author: "Course"
 project: 
     type: website
-    directory: website
+    output-dir: website
     render:
         - index.qmd
 # preview: 
@@ -12,6 +12,3 @@ format:
     html:
         page-layout: article
         theme: [darkly]
----
-
-Whatever content
