@@ -1,0 +1,17 @@
+---
+title: "Templete Quarto "
+author: "Course"
+project:
+    type: website
+    render:
+        - index.qmd
+# preview: 
+#    port: 2222
+format:
+    html: 
+        page-layout: article
+        theme: [darkly, style.scss]
+---
+
+
+Whatever content 

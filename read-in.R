@@ -1,0 +1,5 @@
+#install.packages("tidyverse")
+library(tidyverse)
+iris <- read_csv("data/iris.csv")
+head(iris)
+summary(iris)
