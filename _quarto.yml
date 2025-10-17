@@ -4,11 +4,19 @@ author: "Course"
 project: 
     type: website
     output-dir: website
+    preview: 
+      port: 2222
     render:
         - index.qmd
-# preview: 
-#     port: 2222
+        - about.qmd
+website: 
+  navbar:
+    left: 
+        - text: "Home"
+          href: index.qmd
+        - text: "Koens Page"
+          href: about.qmd
 format: 
     html:
         page-layout: article
-        theme: [darkly]
+        theme: [cosmo, style.scss]

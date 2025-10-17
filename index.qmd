@@ -1,17 +1,6 @@
 ---
 title: "Quarto Template"
 author: "Data Science and Machine Learning Class"
-project: 
-    type: website
-    directory: website
-    render:
-        - index.qmd
-# preview: 
-#     port: 2222
-format: 
-    html:
-        page-layout: article
-        theme: [darkly]
 ---
 
 Whatever content
@@ -24,3 +13,7 @@ https://quarto.org/docs/reference/projects/options.html : watch-inputs: Re-rende
 Intentation is important
 
 Syntex Quarto : https://quarto.org/docs/reference/formats/html.html
+
+.scss files basically does everything that adjusts the style
+
+![WU logo](img/wu.svg){}
