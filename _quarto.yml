@@ -20,3 +20,4 @@ format:
     html:
         page-layout: article
         theme: [cosmo, style.scss]
+    

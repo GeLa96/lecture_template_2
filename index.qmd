@@ -2,12 +2,59 @@
 title: "Quarto Template"
 author: "Data Science and Machine Learning Class"
 ---
+# Headline 1
+
+::: {column.screen}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+::: 
+[Link Text](https://wifo.ac.at){target="_blank" .myLink}
+
+::: {.imageContainer}
 
 Whatever content
 
-[Link Text](https://wifo.ac.at){target="_blank" .myLink}
+```{r}
+library(tidyverse)
+library(knitr)
+
+data <- read_csv("data/cases.csv")
 
 
+```
+
+
+```{r}
+plot_data <- data |>
+    separate(
+        case_nr,
+        into = c("region", "court_nr"),
+        sep = ","
+    ) |>
+    mutate(
+        year = as.numeric(substr(month, 1, 4))
+    ) |>
+    group_by(region, year) |>
+    count() |>
+    group_by(region) |>
+    filter(sum(n) > 50)
+
+selectYear <- 2010
+
+favoriten <- plot_data |>
+    filter(year == 2010 & region == "BG Favoriten") |>
+    pull(n)
+
+innere <- plot_data |>
+    filter(year == selectYear & region == "BG Innere Stadt Wien") |>
+    pull(n)
+
+
+```
+
+The number of cases in Favoriten in `{r} selectYear` was `{r} favoriten`, while in Innere Stadt it was `{r} innere`.
+ So the numerb in Favoriten is <span style="color:{r} color" >{r} word</span>
+
+::: {.column-screen-inset}
 https://quarto.org/docs/reference/projects/options.html : watch-inputs: Re-render input files when they change (defaults to true)
 
 Intentation is important
@@ -16,4 +63,4 @@ Syntex Quarto : https://quarto.org/docs/reference/formats/html.html
 
 .scss files basically does everything that adjusts the style
 
-![WU logo](img/wu.svg){}
+![WU logo](img/wu.svg){fig-align="left" .myLogo .defaultLogo}

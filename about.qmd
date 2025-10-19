@@ -1,4 +1,28 @@
 ---
 title: "Quarto Template"
-author: "Data Science and Machine Learning Class"
+author: "Koen"
 ---
+
+# Headline 
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+```{r}
+#| output: false
+#| echo: false
+#| eval: true
+library(tidyverse)
+# library(kableExtra)
+library(knitr)
+data <- read_csv("data/cases.csv")
+```
+
+```{r}
+#| output: true
+#| echo: false
+#| eval: true
+
+
+data |>
+    filter(row_number() <= 10) |>
+    kable("html")
+```
